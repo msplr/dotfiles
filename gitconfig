@@ -1,0 +1,25 @@
+[user]
+    name = Michael Spieler
+    email = michael.spieler@epfl.ch
+[core]
+    excludesfile = /Users/mi/.gitignore_global
+    editor = nano
+[color]
+    ui = auto
+    interactive = auto
+[alias]
+    st = status -s
+    fa = fetch --all
+    co = checkout
+    dc = diff --cached
+    # formatting inspired by froj/dotfiles
+    lg = log --oneline --graph --abbrev-commit --decorate --format=format:'%C(yellow)%h%C(reset) %C(green)(%ar)%C(reset)%C(auto)%d%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
+    la = log --all --graph --abbrev-commit --decorate --format=format:'%C(yellow)%h%C(reset) %C(green)(%ar)%C(reset)%C(auto)%d%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
+    lu = log -u --graph --abbrev-commit --decorate --format=format:'%C(yellow)%h%C(reset) %C(green)(%ar)%C(reset)%C(auto)%d%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%n'
+    lf = log --stat --graph --abbrev-commit --decorate --format=format:'%C(yellow)%h%C(reset) %C(green)(%ar)%C(reset)%C(auto)%d%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%n'
+    snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
+[filter "media"]
+    clean = git-media-clean %f
+    smudge = git-media-smudge %f
+[push]
+    default = simple
