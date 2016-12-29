@@ -3,7 +3,7 @@
     email = michael.spieler@epfl.ch
 [core]
     excludesfile = /Users/mi/.gitignore_global
-    editor = nano
+    editor = vim
 [color]
     ui = auto
     interactive = auto
