@@ -18,6 +18,9 @@
     lu = log -u --graph --abbrev-commit --decorate --format=format:'%C(yellow)%h%C(reset) %C(green)(%ar)%C(reset)%C(auto)%d%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%n'
     lf = log --stat --graph --abbrev-commit --decorate --format=format:'%C(yellow)%h%C(reset) %C(green)(%ar)%C(reset)%C(auto)%d%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%n'
     snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
+    stash-all = stash save --include-untracked
+    glog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+    prune = fetch --prune
 [filter "media"]
     clean = git-media-clean %f
     smudge = git-media-smudge %f
