@@ -37,7 +37,7 @@ RPROMPT='%(?..%F{red}[%?] %f)[%D{%H:%M:%S}]'
 zstyle ':completion:*' special-dirs true
 
 # History settings
-HISTFILE=~/.history-zsh
+HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 setopt append_history           # allow multiple sessions to append to one history
