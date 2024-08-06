@@ -23,6 +23,7 @@
     prune = fetch --prune
     git = !exec git
     tracked-files = ls-tree -r master --name-only
+    showtool = "!showci () { rev=${1:-HEAD}; git difftool $rev~1 $rev; }; showci $1"
 [filter "media"]
     clean = git-media-clean %f
     smudge = git-media-smudge %f
@@ -30,3 +31,14 @@
     default = simple
 [pull]
     rebase = false
+[fetch]
+    prune = true
+
+[diff]
+    tool = difftastic
+
+[difftool]
+    prompt = false
+
+[difftool "difftastic"]
+    cmd = difft "$LOCAL" "$REMOTE"
