@@ -38,8 +38,9 @@ zstyle ':completion:*' special-dirs true
 
 # History settings
 HISTFILE=~/.zsh_history
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=99999
+HISTFILESIZE=99999
+SAVEHIST=$HISTSIZE
 setopt append_history           # allow multiple sessions to append to one history
 setopt bang_hist                # treat ! special during command expansion
 setopt extended_history         # Write history in :start:elasped;command format
@@ -75,3 +76,45 @@ bindkey '^[[1;5C' forward-word
 bindkey '^[[1;5D' backward-word
 bindkey '^[^[[C' forward-word
 bindkey '^[^[[D' backward-word
+
+################################################################################
+# User settings
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export PATH="/usr/local/bin:$PATH"
+export PATH="$PATH:/Users/mi/bin"
+export PATH="$PATH:/Users/mi/bin/gcc-arm-none-eabi-8-2018-q4-major/bin"
+# export PATH="$PATH:/Users/mi/bin/gcc-arm-none-eabi-10-2020-q4-major/bin"
+
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
+# alias python=/usr/local/bin/python3
+# alias pip=/usr/local/bin/pip3
+
+
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/opt/homebrew/Caskroom/miniforge/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/opt/homebrew/Caskroom/miniforge/base/etc/profile.d/conda.sh" ]; then
+        . "/opt/homebrew/Caskroom/miniforge/base/etc/profile.d/conda.sh"
+    else
+        export PATH="/opt/homebrew/Caskroom/miniforge/base/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
+source /opt/homebrew/opt/chruby/share/chruby/auto.sh
+chruby ruby-3.1.2
+
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
+
